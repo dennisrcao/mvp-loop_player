@@ -14,7 +14,7 @@ const SearchResults = (props) => {
     <>
     <SearchResultsTitle> <p> Search Results  </p></SearchResultsTitle>
 
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <form action="/upload" method="POST" encType="multipart/form-data">
       <div class="custom-file mb-3">
         <input type="file" name="file" id="file" class="custom=file-input"/>
         <label for="file" class="custom-file-label"> Choose File</label>
