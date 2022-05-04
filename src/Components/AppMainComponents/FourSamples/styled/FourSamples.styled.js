@@ -2,10 +2,10 @@
 import styled from 'styled-components';
 
 
-export const SamplesContainer = styled.div`
+export const FourSamplesContainer = styled.div`
 border: 1px solid red;
 height: 710px;
-width: 600px;
-margin-top:-715px;
-margin-left:450px;
+width: 700px;
+margin-top:-627px;
+margin-left:400px;
 `;

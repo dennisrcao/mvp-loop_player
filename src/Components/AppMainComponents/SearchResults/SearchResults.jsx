@@ -11,18 +11,8 @@ const SearchResults = (props) => {
   const {searchData} = useContext(SearchDataContext);
 
   return (
-    <>
-    <SearchResultsTitle> <p> Search Results  </p></SearchResultsTitle>
-
-    <form action="/upload" method="POST" encType="multipart/form-data">
-      <div class="custom-file mb-3">
-        <input type="file" name="file" id="file" class="custom=file-input"/>
-        <label for="file" class="custom-file-label"> Choose File</label>
-      </div>
-      <input type="submit" value="Submit" class="btn btn-primary btn-block"/>
-    </form>
-
     <SearchResultsContainer>
+      <SearchResultsTitle> <p> Search Results  </p></SearchResultsTitle>
       {
         searchData.map((entry, index)=>{
           return (
@@ -34,7 +24,7 @@ const SearchResults = (props) => {
                   }
                 </SRCPlayButtonContainer>
                   {console.log(entry)}
-                <SRCNameContainer>{entry.name.substring(0,30)}     {entry.id}</SRCNameContainer>
+                <SRCNameContainer>{entry.name.substring(0,30)} </SRCNameContainer>
 
                 <SRDownloadButton url={entry.download}/>
 
@@ -44,7 +34,6 @@ const SearchResults = (props) => {
         })
       }
     </SearchResultsContainer>
-    </>
 
   );
 }

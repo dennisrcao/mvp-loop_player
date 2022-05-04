@@ -28,7 +28,7 @@ function Navbar() {
         <RightContainer>
           <NavbarLinkContainer>
             <NavbarLink to="/"> Home </NavbarLink>
-            <NavbarLink to="/about"> About the Creator</NavbarLink>
+            <NavbarLink to="/about"> About</NavbarLink>
             <OpenLinksButton onClick={() => {
                   setExtendNavbar((curr) => !curr);
                 }}

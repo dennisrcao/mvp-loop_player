@@ -6,6 +6,7 @@ import React from 'react';
 const SRDownloadButton = (props) => {
   function saveToDB (){
     console.log('in clicked with url', props.url);
+    location.href=props.url;
   }
   return (
     <>

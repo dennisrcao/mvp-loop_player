@@ -6,7 +6,7 @@ export const SearchContainer = styled.div`
   height: 110px;
   width: 350px;
   margin-top:50px;
-  margin-left:50px;
+  margin-left:10px;
   position: relative;
 `;
 
