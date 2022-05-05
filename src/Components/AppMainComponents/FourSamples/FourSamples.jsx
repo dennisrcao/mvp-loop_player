@@ -8,9 +8,7 @@ const FourSamples = (props) => {
   return (
     <FourSamplesContainer>
       <Sample/>
-      <Sample/>
-      <Sample/>
-      <Sample/>
+
     </FourSamplesContainer>
 
 

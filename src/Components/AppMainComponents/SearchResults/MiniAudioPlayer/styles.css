@@ -11,12 +11,11 @@
   align-items: center;
 
 }
-
+/*
 .playback-button {
-  border: 1px solid blue;
   transition: 0.2s;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border: 1px solid #54b1c1;
   display: flex;
   align-items: center;
@@ -24,7 +23,7 @@
   border-radius: 50%;
   margin-right: 5px;
   cursor: pointer;
-}
+} */
 
 .playback-button svg {
   transition: 0.2s;

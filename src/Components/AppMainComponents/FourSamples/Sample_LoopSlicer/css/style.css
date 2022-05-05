@@ -1,0 +1,190 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 10px;
+	padding-left: 10px;
+    padding-right: 10px;
+}
+#demo{
+    border: 1px solid blue;
+    position: relative;
+    /* display:flex; */
+}
+.compare-container{
+    border: 1px solid red;
+    height:160px;
+    width:700px;
+    margin-bottom:15px;
+}
+.controls {
+    padding: 20px 0 20px;
+    text-align: center;
+}
+/* sound name container*/
+.sound-top-container{
+    /* border: 1px solid red; */
+    /* background-color: red;; */
+    width:700px;
+    height:18px;
+    /*test B */
+    position: relative;
+}
+.controls {
+    /* border: 1px solid black; */
+    width:100px;
+    max-height:18px;
+    width: 30%;
+    position: absolute;
+     top:-1px;
+     left:0px;
+     display:flex;
+}
+/* open file */
+.open-container{
+    border: 1px solid black;
+    position: absolute;
+    top:-2px;
+    width: 30px;
+}
+.btn-openfile{
+    position: relative;
+    bottom:3px;
+}
+.glyphicon-open-file{
+    font-size: 13px;
+    right:2px;
+    bottom:4px;
+}
+
+.play-container{
+    position: absolute;
+    top:-4px;
+    left: 35px;
+}
+.save-container{
+    display:none;
+}
+.filename-container{
+    position: absolute;
+    top:-4px;
+    left:155px;
+    /* border: 1px solid black; */
+}
+/* for zoom in zoom out buttons */
+.zoom-btn-container{
+    /* border: 1px solid black; */
+    align-items:center;
+    display:flex;
+    /*test B */
+    position: absolute;
+    right:73px;
+    top:-5px;
+}
+.zoom-btn{
+    font-size: 5px;
+}
+.glyphicon-zoom-in{
+    font-size:10px;
+}
+.glyphicon-zoom-out{
+    font-size:10px;
+}
+.fx-container{
+    /* border: 1px solid black; */
+    align-items:center;
+    display:flex;
+    position: absolute;
+    right:52px;
+    top:-5px;
+    width:20px;
+}
+#fx-playback-btn{
+    font-size: 8px;
+}
+.glyphicon-forward{
+    font-size:8px;
+}
+
+#fx-compression-btn{
+    font-size: 8px;
+}
+.glyphicon-volume-up{
+    font-size:8px;
+}
+#fx-equalizer-btn{
+    font-size: 8px;
+}
+.glyphicon-equalizer{
+    font-size:8px;
+}
+.row{
+    border:1px solid black;
+    position: absolute;
+    top:0px;
+    left:710px;
+    width:600px;
+}
+
+
+#waveform {
+    position: relative;
+	border-bottom: 1px solid #ddd;
+    background-color: blue;
+    width:700px;
+}
+
+#progress-bar {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    margin-top: -10px;
+    left: 5%;
+    width: 90%;
+}
+
+#nojs {
+	border: 3px dashed #333;
+	color: #000;
+    background-color: #ff0;
+	margin: 15px 15px 15px 15px;
+}
+.ctrlsectionheading {
+	color: #333;
+	font-weight: 600;
+	margin-bottom: 8px;
+	text-align: center;
+}
+.col-md-1{
+    display:none;
+}
+.dontshowtransient{
+    display:none;
+}
+.dontshowenvelope{
+    display:none;
+}
+#playback-container{
+    border:1px solid black;
+    width:33%
+    /* display:none; */
+}
+#compressor-container{
+    border:1px solid black;
+    width:33%
+    /* display:none; */
+}
+#eq-container{
+    border:1px solid black;
+    width:33%
+    /* display:none; */
+}
+
+
+.fxsec {
+	margin-bottom: 10px;
+}
+
+button:disabled {
+	color: #333;
+}
+
+.modal { background: rgba(000, 000, 000, 0.8); min-height:1000000px; }
