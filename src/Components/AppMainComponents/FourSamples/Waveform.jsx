@@ -4,28 +4,42 @@ import { Button, Flex } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import * as WaveformRegionsPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions";
 import randomColor from "randomcolor";
+import './Waveform.css';
 
+let previousURL = '';
 
-const Waveform = ({ url }) => {
+const Waveform = ({ url, index }) => {
   const waveform = useRef(null);
+  console.log('<Waveform> with index', index, 'url ', url);
+  console.log('<Waveform> previousURL was',previousURL);
+  previousURL = url;
 
   useEffect(() => {
-    if (!waveform.current) {
+    // console.log(`<Waveform>${index} useeffect`);
+    // if (url){
+    //   console.log(`<Waveform>${index} useeffect IF URL STATEMENT`)
+    //   // waveform.current.destroy();
+    //   console.log('current waveform', waveform.current);
+    //   console.log(`<Waveform>${index} after destroy`)
+
+    // }
+    if (!waveform.current || url) {
+      console.log(`<Waveform>${index} if statement, no current waveform`);
+
       waveform.current = Wavesurfer.create({
-        container: "#waveform",
+        container: `#waveform-${index}`,
         waveColor: "#567FFF",
         barGap: 2,
         barWidth: 3,
         barRadius: 3,
         cursorWidth: 3,
         cursorColor: "#567FFF",
-		// Add the regions plugin.
-	    // More info here https://wavesurfer-js.org/plugins/regions.html
+        height        : 128,
+        minPxPerSec   : 20,
+        pixelRatio    : window.devicePixelRatio,
         plugins: [WaveformRegionsPlugin.create({ maxLength: 90 })],
       });
       waveform.current.load(url);
-
-
       // Enable dragging on the audio waveform
       waveform.current.enableDragSelection({
           maxLength: 90,
@@ -41,20 +55,15 @@ const Waveform = ({ url }) => {
           });
     }
 
-  }, []);
-
-
+  }, [url]);
   // delete a particular region
   const deleteClip = (clipid) => {
     waveform.current.regions.list[clipid].remove();
   };
-
   // play a particular region
   const playClip = (clipid) => {
     waveform.current.regions.list[clipid].play();
   };
-
-
   const playAudio = () => {
     if (waveform.current.isPlaying()) {
       waveform.current.pause();
@@ -64,14 +73,20 @@ const Waveform = ({ url }) => {
   };
 
   return (
-    <Flex flexDirection="column" w="100%">
-      <div id="waveform" />
-      <Flex flexDirection="row" justifyContent="center">
-        <Button m="4" onClick={playAudio}>
+    <div id="sample-container">
+      <div id="control-container">
+        <Button id={`sample-play-btn-${index}`}  m="4" onClick={playAudio}>
           Play / Pause
         </Button>
-      </Flex>
-    </Flex>
+      </div>
+
+      <div id={`waveform-container-${index}`}>
+        <div id= {`waveform-${index}`} >
+        </div>
+      </div>
+    </div>
+
+
   );
 };
 

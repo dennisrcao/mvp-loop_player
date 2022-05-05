@@ -10,7 +10,7 @@ import AudioPlayer from "./MiniAudioPlayer/AudioPlayer.js";
 const SearchResults = (props) => {
   const {searchDataKey} = useContext(SearchDataContext);
   const searchData = searchDataKey[0];
-  console.log('searchData', searchData);
+  // console.log('searchData', searchData);
 
   return (
     <SearchResultsContainer>
@@ -25,7 +25,6 @@ const SearchResults = (props) => {
                     <AudioPlayer url={entry.previews['preview-lq-mp3']}/>
                   }
                 </SRCPlayButtonContainer>
-                  {console.log(entry)}
                 <SRCNameContainer>{entry.name.substring(0,30)} </SRCNameContainer>
 
                 <SRMoveTo4Player url={entry.previews['preview-lq-mp3']} />
