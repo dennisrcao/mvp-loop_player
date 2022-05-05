@@ -1,0 +1,263 @@
+
+/* the container where wavesurfer adds the audio waveform */
+.sample-container {
+  border: 1px solid red;
+  background-color: red;
+  height: 180px;
+  width: 700px;
+  position: relative;
+}
+
+
+.waveform-top{
+  position: absolute;
+  background-color: yellow;
+  height:20px;
+  width: 100%;
+}
+.waveform-container {
+  position: absolute;
+  background-color:lightblue;
+  width:100%;
+  height:150px;
+  /*original ^ */
+  top:18px;
+}
+
+  /*get rid of top wave*/
+/*
+wave:first-child {
+  position: absolute;
+  top:128px;
+  border: 1px solid black;
+  display:none;
+} */
+
+#waveform{
+  position:absolute;
+  width:100%;
+  bottom:20px;
+}
+
+#waveform-timeline{
+  position:absolute;
+  bottom:0px;
+}
+
+.zoom-slide-container{
+  position: absolute;
+  bottom: -10px;
+  display:flex;
+  border: 1px solid red;
+  align-items:center;
+}
+.zoom-slide-label{
+  background-color: red;
+  margin-top:5px
+}
+
+
+
+
+
+
+/* style for the trim button */
+.trim {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #1D0B22;
+  color: white;
+  width: 5em;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0.25em;
+  border: 1px solid rebeccapurple;
+}
+
+/* all the button controls */
+div.all-controls {
+  position:absolute;
+  bottom:-150px;
+  width:100%;
+  border: 1px solid black;
+  display:flex
+}
+
+
+
+button.controls {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* style for both sliders */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: rgba(213, 184, 255, 0.7);
+  border: 1px solid #1D0B22;
+  border-radius: 999px;
+  margin: 0;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  filter: brightness(1.05);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #1D0B22;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #1D0B22;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.volume-slide-container {
+  display: flex;
+  align-items: center;
+}
+
+/* smaller icon for zoom slider */
+i.zoom-icon {
+  font-size: 0.8em;
+}
+
+/* toggle switch style*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 1.2em;
+}
+
+.switch input {
+  display: none;
+}
+
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1D0B22;
+  -webkit-transition: .2s;
+  transition: .2s;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.toggle:before {
+  position: absolute;
+  content: "";
+  top: -10%;
+  height: 1.30em;
+  width: 1.30em;
+  background-color: #923CAC;
+  border: 0.05em solid rebeccapurple;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked+.toggle:before {
+  -webkit-transform: translateX(180%);
+  -ms-transform: translateX(180%);
+  transform: translateX(180%);
+}
+
+.on {
+  display: none;
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 35%;
+  font-size: 0.5em;
+}
+
+.off {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 65%;
+  font-size: 0.5em;
+
+}
+
+input:checked+.toggle .on {
+  display: block;
+}
+
+input:checked+.toggle .off {
+  display: none;
+}
+
+/* footer style */
+footer {
+  font-family: inherit;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+@media screen and (max-width: 430px) {
+  nav {
+    font-size: 1em;
+  }
+
+  .upload-audio i.audio-icon {
+    font-size: 4em;
+  }
+
+  /* all icons */
+  i.material-icons {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  div.all-controls {
+    max-width: 90vw;
+    flex-flow: column nowrap;
+  }
+
+  .waveform-container {
+    max-width: 90vw;
+  }
+
+  .all-controls .right-container,
+  .all-controls .left-container {
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  /* smaller icon for zoom slider */
+  i.zoom-icon {
+    font-size: 1em;
+  }
+
+}

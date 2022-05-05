@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef , useContext } from "react";
-import { SearchDataContext } from '../../../Contexts/SearchDataContext.js';
+import { SearchDataContext } from '../../../Contexts/Context.js';
 
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -75,7 +75,8 @@ const musicKeys = [
 const Search = (props) => {
   const keyRef = useRef('');
   const termRef = useRef('');
-  const {setSearchData} = useContext (SearchDataContext);
+  const {searchDataKey} = useContext(SearchDataContext);  //gather global state
+  const setSearchData = searchDataKey[1];
 
 
   function searchTermHandler(e){
