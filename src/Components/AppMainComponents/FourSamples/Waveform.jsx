@@ -1,4 +1,6 @@
 import React from 'react';
+import {useContext} from 'react';
+import {WhichPlayerToReplace} from '../../../Contexts/Context.js';
 import Wavesurfer from "wavesurfer.js";
 import { Button, Flex } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
@@ -10,22 +12,14 @@ let previousURL = '';
 
 const Waveform = ({ url, index }) => {
   const waveform = useRef(null);
-  console.log('<Waveform> with index', index, 'url ', url);
-  console.log('<Waveform> previousURL was',previousURL);
-  previousURL = url;
-
+  let {startIndex, setStartIndex} = useContext(WhichPlayerToReplace);
+  console.log('Global startIndex', startIndex);
+  console.log('<Waveform> ', index);
   useEffect(() => {
-    // console.log(`<Waveform>${index} useeffect`);
-    // if (url){
-    //   console.log(`<Waveform>${index} useeffect IF URL STATEMENT`)
-    //   // waveform.current.destroy();
-    //   console.log('current waveform', waveform.current);
-    //   console.log(`<Waveform>${index} after destroy`)
-
-    // }
     if (!waveform.current || url) {
-      console.log(`<Waveform>${index} if statement, no current waveform`);
-
+      if (waveform.current){
+        waveform.current.destroy();
+      }
       waveform.current = Wavesurfer.create({
         container: `#waveform-${index}`,
         waveColor: "#567FFF",
@@ -45,14 +39,47 @@ const Waveform = ({ url, index }) => {
           maxLength: 90,
           });
       // Perform action when new region is created
-          waveform.current.on("region-created", (e) => {
-          let color = randomColor({
-              luminosity: "light",
-              alpha: 0.3,
-              format: "rgba",
+      waveform.current.on("region-created", (e) => {
+      let color = randomColor({
+          luminosity: "light",
+          alpha: 0.3,
+          format: "rgba",
+      });
+      e.color = color;
+      });
+    }
+    if (startIndex===index){
+      console.log('startIndex===index URL useeffect here');
+
+       waveform.current.destroy();
+       waveform.current = Wavesurfer.create({
+        container: `#waveform-${index}`,
+        waveColor: "#567FFF",
+        barGap: 2,
+        barWidth: 3,
+        barRadius: 3,
+        cursorWidth: 3,
+        cursorColor: "#567FFF",
+        height        : 128,
+        minPxPerSec   : 20,
+        pixelRatio    : window.devicePixelRatio,
+        plugins: [WaveformRegionsPlugin.create({ maxLength: 90 })],
+      });
+      waveform.current.load(url);
+      // Enable dragging on the audio waveform
+      waveform.current.enableDragSelection({
+          maxLength: 90,
           });
-          e.color = color;
-          });
+      // Perform action when new region is created
+      waveform.current.on("region-created", (e) => {
+      let color = randomColor({
+          luminosity: "light",
+          alpha: 0.3,
+          format: "rgba",
+      });
+      e.color = color;
+      });
+
     }
 
   }, [url]);

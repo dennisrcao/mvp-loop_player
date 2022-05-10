@@ -17,10 +17,10 @@ const AppMain = () => {
 
 
 //line 24 is only searchDataContext
+// {console.log('render <AppMain>')}
 
   return (
       <MainCanvas>
-      {console.log('render <AppMain>')}
         <SearchDataContext.Provider value={{ searchDataKey:[searchData, setSearchData]}}>
         <FourPlayerURLsContext.Provider value={{fourPlayerURLsKey:[fourPlayerURLs, setFourPlayerURLs]}}>
         <WhichPlayerToReplace.Provider value={{startIndex, setStartIndex}}>

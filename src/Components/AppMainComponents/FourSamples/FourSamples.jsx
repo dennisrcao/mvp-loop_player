@@ -5,25 +5,23 @@ import Waveform from './Waveform.jsx';
 
 const FourSamples = (props) => {
   const {fourPlayerURLsKey} = useContext(FourPlayerURLsContext);
-  console.log('<FourSamples>', fourPlayerURLsKey);
   let fourPlayerURLs = fourPlayerURLsKey[0];
-  console.log('<FourSamples> four urls are', fourPlayerURLs);
+  // console.log('<FourSamples> four urls are', fourPlayerURLs);
   useEffect(()=>{
-    console.log('<FourSample> useEffect triggered');
+    // console.log('<FourSample> useEffect triggered');
   },[fourPlayerURLs])
 
   function playAllSamples () {
     console.log('playallsamples');
     console.log(document.getElementById('sample-play-btn-1'));
     document.getElementById('sample-play-btn-0').click();
-
     document.getElementById('sample-play-btn-1').click();
     document.getElementById('sample-play-btn-2').click();
-
     document.getElementById('sample-play-btn-3').click();
 
   }
 
+  // {console.log('re-rendering foursamples')}
 
   return (
     <>
@@ -32,7 +30,6 @@ const FourSamples = (props) => {
       </FourSamplesGlobal>
 
       <FourSamplesContainer>
-      {console.log('re-rendering foursamples')}
         <Waveform url={fourPlayerURLs[0]} index={0}/>
         <Waveform url={fourPlayerURLs[1]} index={1}/>
         <Waveform url={fourPlayerURLs[2]} index={2}/>

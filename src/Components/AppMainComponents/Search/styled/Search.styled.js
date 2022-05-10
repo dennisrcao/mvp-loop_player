@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 export const SearchContainer = styled.div`
   border: 1px solid red;
+  border-radius: 10px;
+  background-color:white;
   height: 110px;
   width: 350px;
-  margin-top:50px;
-  margin-left:10px;
   position: relative;
+  left:10px;
+  top:10px;
+
 `;
 
 export const SearchKeyContainer = styled.div`

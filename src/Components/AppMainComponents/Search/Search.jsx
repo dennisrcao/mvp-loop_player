@@ -13,7 +13,6 @@ import { SearchContainer, SearchTermContainer, SearchKeyContainer} from './style
 const axios = require('axios');
 const FREESOUND_TOKEN='39wKhLgQ9evoEDRkT5VKEs83DYJVgkOP2z14bb2j';
 
-
 const musicKeys = [
   {
     value: '',
@@ -96,7 +95,7 @@ const Search = (props) => {
           textQuery['previews'] = idQueryResults[index].data.previews;
           textQuery['download'] = idQueryResults[index].data.download;
         })
-        console.log('textQueryResults', textQueryResults);
+        // console.log('textQueryResults', textQueryResults);
         setSearchData(textQueryResults);
       })
     })
