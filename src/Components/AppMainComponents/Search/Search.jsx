@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef , useContext } from "react";
-import { SearchDataContext } from '../../../Contexts/SearchDataContext.js';
+import { SearchDataContext } from '../../../Contexts/Context.js';
 
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
@@ -12,7 +12,6 @@ import { SearchContainer, SearchTermContainer, SearchKeyContainer} from './style
 
 const axios = require('axios');
 const FREESOUND_TOKEN='39wKhLgQ9evoEDRkT5VKEs83DYJVgkOP2z14bb2j';
-
 
 const musicKeys = [
   {
@@ -75,7 +74,8 @@ const musicKeys = [
 const Search = (props) => {
   const keyRef = useRef('');
   const termRef = useRef('');
-  const {setSearchData} = useContext (SearchDataContext);
+  const {searchDataKey} = useContext(SearchDataContext);  //gather global state
+  const setSearchData = searchDataKey[1];
 
 
   function searchTermHandler(e){
@@ -95,7 +95,7 @@ const Search = (props) => {
           textQuery['previews'] = idQueryResults[index].data.previews;
           textQuery['download'] = idQueryResults[index].data.download;
         })
-        console.log('textQueryResults', textQueryResults);
+        // console.log('textQueryResults', textQueryResults);
         setSearchData(textQueryResults);
       })
     })

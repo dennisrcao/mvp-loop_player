@@ -8,3 +8,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+//remove strict mode? idk how, but it renders twice.

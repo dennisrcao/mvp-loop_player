@@ -23,7 +23,7 @@ export const SearchResultsContainer = styled.div`
 
 export const SearchResultContainer = styled.div`
   border: 1px solid red;
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 60px;
   width: 350px;
   margin-top:10px;
