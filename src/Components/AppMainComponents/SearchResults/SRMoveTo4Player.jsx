@@ -28,7 +28,7 @@ const SRMoveTo4Player = (props) => {
   }
   return (
     <>
-      <button onClick ={()=>updateIndex(props.url)}> --> </button>
+      <button onClick ={()=>updateIndex(props.url)}> -> </button>
     </>
   )
 }

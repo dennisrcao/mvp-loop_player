@@ -21,7 +21,6 @@ const FourSamples = (props) => {
 
   }
 
-  // {console.log('re-rendering foursamples')}
 
   return (
     <>

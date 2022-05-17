@@ -18,7 +18,6 @@ const musicKeys = [
     value: '',
     label: 'Empty',
   },
-
   {
     value: 'Ab Minor',
     label: 'Ab Minor [ 1A ]',
@@ -67,16 +66,13 @@ const musicKeys = [
     value: 'Db Minor',
     label: 'Db Minor [ 12A ]',
   }
-
 ];
-
 
 const Search = (props) => {
   const keyRef = useRef('');
   const termRef = useRef('');
   const {searchDataKey} = useContext(SearchDataContext);  //gather global state
   const setSearchData = searchDataKey[1];
-
 
   function searchTermHandler(e){
     e.preventDefault();
@@ -95,7 +91,6 @@ const Search = (props) => {
           textQuery['previews'] = idQueryResults[index].data.previews;
           textQuery['download'] = idQueryResults[index].data.download;
         })
-        // console.log('textQueryResults', textQueryResults);
         setSearchData(textQueryResults);
       })
     })
@@ -124,15 +119,9 @@ const Search = (props) => {
             </IconButton>
           </SearchTermContainer>
         </form>
-
         <ModalCircleFifths/>
-
     </SearchContainer>
-
-
   );
 }
-//        <SearchIcon style={{ fill: "blue" }} />
-
 
 export default Search;

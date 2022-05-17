@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 
 export const SearchContainer = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-radius: 10px;
-  background-color:white;
+  background-color: white;
   height: 110px;
   width: 350px;
   position: relative;

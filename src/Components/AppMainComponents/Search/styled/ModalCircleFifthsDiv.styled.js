@@ -3,12 +3,14 @@ import styled from 'styled-components';
 
 export const ModalCircleFifthsDiv = styled.div`
   /* border: 1px solid red; */
-  height: 40px;
-  width: 100px;
-  margin-top:6px;
+  display: flex;
+  height: 32px;
+  width: 70px;
+  position: absolute;
+  top: 5px;
   margin-left: 250px;
-  position: relative;
   font-size: medium;
   font-family: Roboto;
   text-decoration: none;
 `;
+

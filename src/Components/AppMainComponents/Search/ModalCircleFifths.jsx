@@ -24,7 +24,7 @@ export default function BasicModal() {
 
   return (
     <ModalCircleFifthsDiv>
-      <Button onClick={handleOpen} variant="outlined" size="small">Keys</Button>
+      <Button onClick={handleOpen} style={{button:{color:'black'} }}variant="outlined" size="small">Keys</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -49,7 +49,6 @@ export default function BasicModal() {
             alt="CIRCLEFIFTHS"
             src="https://mixedinkey.com/wp-content/uploads/2020/04/Camelot-Wheel-Mixed-In-Key-Harmonic-Mixing.png"
           />
-
         </Box>
       </Modal>
     </ModalCircleFifthsDiv>

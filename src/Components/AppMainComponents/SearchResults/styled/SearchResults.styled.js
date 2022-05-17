@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const SearchResultsTitle = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* background-color: red; */
   font-size: medium;
   font-family: Roboto;
@@ -13,9 +13,9 @@ export const SearchResultsTitle = styled.div`
 
 
 export const SearchResultsContainer = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: lightblue;
-  height: 500px;
+  height: 600px;
   width: 350px;
   margin-left:10px;
   margin-top:15px;
@@ -23,6 +23,7 @@ export const SearchResultsContainer = styled.div`
 
 export const SearchResultContainer = styled.div`
   border: 1px solid red;
+  border-radius: 10px;
   /* background-color: yellow; */
   height: 60px;
   width: 350px;
@@ -32,8 +33,8 @@ export const SearchResultContainer = styled.div`
 `;
 
 export const SRCPlayButtonContainer = styled.div`
-  border: 1px solid red;
-  background-color: red;
+  /* border: 1px solid red; */
+  /* background-color: red; */
   width:15%;
 `;
 
@@ -44,10 +45,9 @@ export const SRCPlayButton = styled.button`
 
 
 export const SRCNameContainer = styled.div`
-  border: 1px solid red;
-  background-color: blueviolet;
+  /* border: 1px solid red; */
+  /* background-color: blueviolet; */
   display:flex;
-  /* align-items:center; */
   width:75%;
   margin-top:0px;
 `;
