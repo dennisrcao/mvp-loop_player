@@ -9,7 +9,7 @@
     "build": "Webpack ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Dennis Cao",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
